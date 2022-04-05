@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 
+//Inicializacion de la clase Scanner
 class Scanner {
 	private:
 	std::string codigo_fuente;
@@ -34,7 +35,7 @@ class Scanner {
 	void enlista_tokens();
 
 	public:
-	// Constructors
+	// Constructores
 	Scanner();
 	Scanner(std::string codigo_fuente);	
 	std::vector<Token> escanear();

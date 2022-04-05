@@ -1,9 +1,13 @@
 #include "Scanner.h"
 
+//Constructor por default de la clase Scanner
+//Complejidad temporal: O(1)
 Scanner::Scanner () {
 	this->codigo_fuente = "";
 }
 
+//Constructor de la clase Scanner
+//Complejidad temporal: O(1)
 Scanner::Scanner (std::string codigo_fuente) {
 	this->codigo_fuente = codigo_fuente;
 }
