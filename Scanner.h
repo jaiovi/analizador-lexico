@@ -26,14 +26,16 @@ class Scanner {
 	std::string DOS_PUNTOS = ":";
 	std::string PUNTO_COMA = ";";
 	std::string COMA = ",";
+	// Funciones Auxiliares
+	bool lexema_reservado(std::string lexema);
+	bool caracter_reservado(char c);
+	void asignar_caracter(char c);
+	std::vector<std::string> lista_palabras();
+	void enlista_tokens();
 
 	public:
 	// Constructors
 	Scanner();
 	Scanner(std::string codigo_fuente);	
-
-	// Funciones Auxiliares
-	std::vector<std::string> lista_palabras();
-	void enlista_tokens();
 	std::vector<Token> escanear();
 };
