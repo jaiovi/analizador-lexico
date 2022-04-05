@@ -12,6 +12,7 @@ Token::Token(std::string tipo_token, std::string data, int index) {
 	this->index = index;
 }
 
+// Imprime contenidos del Token
 void Token::print() {
 	std::cout << "(" << this->tipo_token << ",\t";
 	std::cout << this->data << ",\t";
@@ -19,14 +20,17 @@ void Token::print() {
 	std::cout << std::endl;
 }
 
+// Regresa el tipo de token
 std::string Token::tipo() {
 	return this->tipo_token;
 }
 
+// Regresa el atributo valor ligado al Token
 std::string Token::cadena() {
 	return this->data;
 }
 
+// Regresa el 
 int Token::indice() {
 	return this->index;
 }
