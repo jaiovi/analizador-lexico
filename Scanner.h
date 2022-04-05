@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 
+//Inicializacion de la clase Scanner
 class Scanner {
 	private:
 	std::string codigo_fuente;
@@ -28,7 +29,7 @@ class Scanner {
 	std::string COMA = ",";
 
 	public:
-	// Constructors
+	// Constructores
 	Scanner();
 	Scanner(std::string codigo_fuente);	
 

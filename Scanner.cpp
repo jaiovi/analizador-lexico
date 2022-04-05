@@ -1,13 +1,19 @@
 #include "Scanner.h"
 
+//Constructor por default de la clase Scanner
+//Complejidad temporal: O(1)
 Scanner::Scanner () {
 	this->codigo_fuente = "";
 }
 
+//Constructor de la clase Scanner
+//Complejidad temporal: O(1)
 Scanner::Scanner (std::string codigo_fuente) {
 	this->codigo_fuente = codigo_fuente;
 }
 
+//Metodo enlista_tokens para asignar tokens a cada lexema
+//Complejidad temporal: O(N)
 void Scanner::enlista_tokens () {
 	std::vector <std::string> cadenas = lista_palabras();
 	// Asignando tokens a los lexemas
@@ -34,7 +40,9 @@ void Scanner::enlista_tokens () {
 	}
 }
 
-std::vector< std::string > Scanner::lista_palabras() { // O(n)
+//Metodo lista_palabras para reconocer los diferentes tipos de lexemas
+//Complejidad temporal: O(N)
+std::vector< std::string > Scanner::lista_palabras() { 
 	std::vector<std::string> lista_palabras;
     std::string cadena = "";
 	bool comentario = false;
