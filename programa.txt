@@ -1,0 +1,7 @@
+program
+    a,b,c,d : int;
+var
+
+begin
+
+end
