@@ -42,6 +42,19 @@ bool Scanner::lexema_reservado(std::string lexema) {
 	}
 }
 
+bool Scanner::es_numero(std::string lexema) {
+	for (int i = 0; i < lexema.size(); i++) {
+		if (lexema[i] < '0' || lexema[i] > '9') {
+			return false;
+		} else if (lexema[i] == '.') {
+			this->lista_tokens.push_back(Token("tk_numero_flotante", lexema, this->lista_tokens.size()));
+			return true;
+		}
+	}
+	this->lista_tokens.push_back(Token("tk_numero_entero", lexema, this->lista_tokens.size()));
+	return true;
+}
+
 bool Scanner::caracter_reservado (char c) { // O(1)
 	std::string lexema = "";
 	lexema += c;
@@ -130,7 +143,8 @@ void Scanner::enlista_tokens () {
 				if (caracter_reservado(c)) { // Verificando si un caracter es reservado
 					if (palabra.length() > 0) {
 						if (!lexema_reservado(palabra)) // Si no es una palabra reservada, es una variable o dato
-						this->lista_tokens.push_back(Token("tk_var", palabra, this->lista_tokens.size()));
+						if (!es_numero(palabra)) // Si no es un numero, es una variable o dato
+						this->lista_tokens.push_back(Token("tk_id", palabra, this->lista_tokens.size()));
 						palabra = "";
 					}
 					asignar_caracter(c);
@@ -140,7 +154,8 @@ void Scanner::enlista_tokens () {
 			}
 			if (palabra.length() > 0) {
 				if (!lexema_reservado(palabra)) // Si no es una palabra reservada, es una variable o dato
-				this->lista_tokens.push_back(Token("tk_var", palabra, this->lista_tokens.size()));
+				if (!es_numero(palabra)) // Si no es un numero, es una variable o dato
+				this->lista_tokens.push_back(Token("tk_id", palabra, this->lista_tokens.size()));
 				palabra = "";
 			}
 		}

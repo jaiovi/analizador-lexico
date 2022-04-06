@@ -27,7 +27,9 @@ class Scanner {
 	std::string DOS_PUNTOS = ":";
 	std::string PUNTO_COMA = ";";
 	std::string COMA = ",";
+
 	// Funciones Auxiliares
+	bool es_numero(std::string lexema);
 	bool lexema_reservado(std::string lexema);
 	bool caracter_reservado(char c);
 	void asignar_caracter(char c);
