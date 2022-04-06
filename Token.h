@@ -6,10 +6,9 @@
 #include <string> // string
 #include <iostream>
 
-// Creamos la clase Token, un par formado por un nombre y un valor. El nombre 
+// Creamos la clase Token. Tiene como atributo un nombre y un valor. El nombre 
 // representa un tipo de unidad lexica o una secuencia de caracteres equivalente
-// a un identificador. Un analizador sintactico toma los token como entrada
-
+// a un identificador. El analizador sintactico toma los token como entrada.
 class Token {
 	private:
 	std::string tipo_token;
