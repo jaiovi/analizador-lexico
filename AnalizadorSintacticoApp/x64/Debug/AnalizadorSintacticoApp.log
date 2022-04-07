@@ -1,0 +1,4 @@
+﻿  MyForm.cpp
+C:\Users\NINJA\Desktop\Tec\4º Semestre\Implementacion\AnalizadorSintacticoApp\MyForm.cpp(12,1): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
+  MyForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  AnalizadorSintacticoApp.vcxproj -> C:\Users\NINJA\Desktop\Tec\4º Semestre\Implementacion\AnalizadorSintacticoApp\x64\Debug\AnalizadorSintacticoApp.exe

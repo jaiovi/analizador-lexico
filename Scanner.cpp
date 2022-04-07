@@ -123,7 +123,7 @@ std::vector< std::string > Scanner::lista_palabras() { // O(n)
             cadena = "";
             comentario = true;
         }
-        else if (letra != 32 && letra != 9) {
+        else if (letra != 32 && letra != 9 && letra != '\n') {
             cadena += letra;
         }
         else {

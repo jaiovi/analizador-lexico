@@ -1,0 +1,5 @@
+C:\Users\NINJA\Desktop\Tec\4º Semestre\Implementacion\AnalizadorSintacticoApp\x64\Debug\AnalizadorSintacticoApp.vcxproj.AssemblyReference.cache
+C:\Users\NINJA\Desktop\Tec\4º Semestre\Implementacion\AnalizadorSintacticoApp\x64\Debug\AnalizadorSintacticoApp.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\NINJA\Desktop\Tec\4º Semestre\Implementacion\AnalizadorSintacticoApp\x64\Debug\AnalizadorSintacticoApp.exe
+C:\Users\NINJA\Desktop\Tec\4º Semestre\Implementacion\AnalizadorSintacticoApp\x64\Debug\AnalizadorSintacticoApp.MyForm.resources
+C:\Users\NINJA\Desktop\Tec\4º Semestre\Implementacion\AnalizadorSintacticoApp\x64\Debug\AnalizadorSintacticoApp.vcxproj.GenerateResource.cache

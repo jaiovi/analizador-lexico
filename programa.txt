@@ -1,8 +1,8 @@
 program suma
-var
+var 
     a,b,c,d : int;
     aF,bF,cF,dF : float;
-begin
+begin 
     a = 1;
     b = 2;
     c = 3;
