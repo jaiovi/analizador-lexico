@@ -43,15 +43,20 @@ bool Scanner::lexema_reservado(std::string lexema) {
 }
 
 bool Scanner::es_numero(std::string lexema) {
+	bool es_flotante = false;
 	for (int i = 0; i < lexema.size(); i++) {
-		if (lexema[i] < '0' || lexema[i] > '9') {
+		if (lexema[i] == '.') {
+			es_flotante = true;
+			std::cout << "Hola" << std::endl;
+		} else if (lexema[i] < '0' || lexema[i] > '9') {
 			return false;
-		} else if (lexema[i] == '.') {
-			this->lista_tokens.push_back(Token("tk_numero_flotante", lexema, this->lista_tokens.size()));
-			return true;
 		}
 	}
-	this->lista_tokens.push_back(Token("tk_numero_entero", lexema, this->lista_tokens.size()));
+	if (es_flotante) {
+		this->lista_tokens.push_back(Token("tk_numero_flotante", lexema, this->lista_tokens.size()));
+	} else {
+		this->lista_tokens.push_back(Token("tk_numero_entero", lexema, this->lista_tokens.size()));
+	}
 	return true;
 }
 
@@ -72,6 +77,8 @@ bool Scanner::caracter_reservado (char c) { // O(1)
 	} else if (lexema == PUNTO_COMA) {
 		return true;
 	} else if (lexema == COMA) {
+		return true;
+	} else if (lexema == ASIGNACION) {
 		return true;
 	} else {
 		return false;
@@ -96,6 +103,8 @@ void Scanner::asignar_caracter (char c) { // O(1)
 		this->lista_tokens.push_back(Token("tk_punto_coma", lexema, this->lista_tokens.size()));
 	} else if (lexema == COMA) {
 		this->lista_tokens.push_back(Token("tk_coma", lexema, this->lista_tokens.size()));
+	} else if (lexema == ASIGNACION) {
+		this->lista_tokens.push_back(Token("tk_asign", lexema, this->lista_tokens.size()));
 	}
 
 	return;

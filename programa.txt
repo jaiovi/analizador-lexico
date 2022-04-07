@@ -1,8 +1,14 @@
 program suma
-    a,b,c,d : int;
-    a,b,c,d : float;
 var
-
+    a,b,c,d : int;
+    aF,bF,cF,dF : float;
 begin
+    a = 1;
+    b = 2;
+    c = 3;
+    a = b + c;
 
+    aF = 23.56 - 45.12;
+    bF = 0.11111;
+    cF = aF / bf;
 end
