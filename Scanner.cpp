@@ -12,6 +12,8 @@ Scanner::Scanner (std::string codigo_fuente) {
 	this->codigo_fuente = codigo_fuente;
 }
 
+//Metodo para verificar si una palabra es reservada
+//Complejidad: O(1)
 bool Scanner::lexema_reservado(std::string lexema) {
 	if (lexema == INTEGER) {
 		this->lista_tokens.push_back(Token("tk_int", lexema, this->lista_tokens.size()));
@@ -42,6 +44,8 @@ bool Scanner::lexema_reservado(std::string lexema) {
 	}
 }
 
+//Metodo para verificar si un lexema es un numero flotante o entero
+//Complejidad: O(N)
 bool Scanner::es_numero(std::string lexema) {
 	bool es_flotante = false;
 	for (int i = 0; i < lexema.size(); i++) {
@@ -60,7 +64,9 @@ bool Scanner::es_numero(std::string lexema) {
 	return true;
 }
 
-bool Scanner::caracter_reservado (char c) { // O(1)
+//Metodo para verificar si hay un caracter reservado
+//Complejidad: O(1)
+bool Scanner::caracter_reservado (char c) { 
 	std::string lexema = "";
 	lexema += c;
 	
@@ -85,7 +91,9 @@ bool Scanner::caracter_reservado (char c) { // O(1)
 	}
 }
 
-void Scanner::asignar_caracter (char c) { // O(1)
+//Metodo para crear tokens de acuerdo al caracter que se recibe
+//Complejidad: O(1)
+void Scanner::asignar_caracter (char c) { 
 	std::string lexema = "";
 	lexema += c;
 
@@ -110,7 +118,9 @@ void Scanner::asignar_caracter (char c) { // O(1)
 	return;
 }
 
-std::vector< std::string > Scanner::lista_palabras() { // O(n)
+//Metodo que separa el codigo fuente por espacios y tabuladores
+//Complejidad: O(N)
+std::vector< std::string > Scanner::lista_palabras() {
 	std::vector<std::string> lista_palabras;
     std::string cadena = "";
 	bool comentario = false;
@@ -140,6 +150,8 @@ std::vector< std::string > Scanner::lista_palabras() { // O(n)
     return lista_palabras;
 }
 
+//Metodo para definir los tokens presentes en el codigo fuente (tabla de simbolos)
+//Complejidad: O(N^2)
 void Scanner::enlista_tokens () {
 	std::vector <std::string> cadenas = lista_palabras();
 	std::string palabra = "";
@@ -172,6 +184,8 @@ void Scanner::enlista_tokens () {
 	return;
 }
 
+//Metodo caller para llamar al metodo enlista_tokens
+//Complejidad: O(N^2)
 std::vector<Token> Scanner::escanear() {
 	enlista_tokens();
 	return this->lista_tokens;

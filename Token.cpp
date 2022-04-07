@@ -17,6 +17,7 @@ Token::Token(std::string tipo_token, std::string data, int index) {
 }
 
 // Imprime contenidos del Token
+// Complejidad: O(1)
 void Token::print() {
 	std::cout << "(" << this->tipo_token << ",\t";
 	std::cout << this->data << ",\t";
@@ -25,16 +26,19 @@ void Token::print() {
 }
 
 // Regresa el tipo de token
+//Complejidad: O(1)
 std::string Token::tipo() {
 	return this->tipo_token;
 }
 
 // Regresa el atributo valor ligado al Token
+// Complejidad: O(1)
 std::string Token::cadena() {
 	return this->data;
 }
 
 // Regresa la posicion del token
+// Complejidad: O(1)
 int Token::indice() {
 	return this->index;
 }
